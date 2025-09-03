@@ -1,0 +1,11 @@
+{
+    "editor.linkedEditing": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "workbench.secondarySidebar.defaultVisibility": "visible",
+    "git.autofetch": true,
+    "workbench.colorCustomizations": {},
+    "cSpell.language": "en,pt-BR", // LINHA ADICIONADA
+    "cSpell.userWords": [
+        "Passo"
+    ]
+}

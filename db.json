@@ -1,0 +1,25 @@
+{
+  "noticias": [
+    {
+      "id": 1,
+      "imagem": "./assets/images/evento1.jpg",
+      "titulo": "Matrículas Abertas para 2026!",
+      "data": "15 de Agosto, 2025",
+      "resumo": "Garanta sua vaga para o próximo ano letivo e junte-se à revolução criativa. Condições especiais para os 50 primeiros matriculados."
+    },
+    {
+      "id": 2,
+      "imagem": "./assets/images/evento2.jpg",
+      "titulo": "Workshop de Fotografia com Câmera de Cinema",
+      "data": "28 de Setembro, 2025",
+      "resumo": "Um evento prático e imersivo para alunos do curso de Film Design e Fotografia. Vagas limitadas, inscreva-se na coordenação."
+    },
+    {
+      "id": 3,
+      "imagem": "./assets/images/evento3.jpg",
+      "titulo": "Infinity Hackathon: Crie um App em 48h",
+      "data": "10 de Outubro, 2025",
+      "resumo": "Desafie suas habilidades de programação e design no nosso hackathon anual. Prêmios incríveis para as melhores equipes!"
+    }
+  ]
+}

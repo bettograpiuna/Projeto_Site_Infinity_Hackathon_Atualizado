@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity School - A Revolução Criativa</title>
+    <link rel="icon" href="./assets/images/logo.jpeg" type="image/jpeg">
+
+    <meta name="description" content="Infinity School - Cursos de tecnologia, inovação e criatividade para preparar você para a revolução criativa. Aprenda programação, marketing, design e mais.">
+    <meta name="keywords" content="Infinity School, Cursos de Tecnologia, Programação, Marketing Digital, Design, Criatividade, Inovação">
+    <meta name="author" content="Infinity School">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body class="theme-default">
+    <div class="color-mode-toggle" id="theme-toggle" title="Alternar tema">
+        <span class="toggle-icon"></span>
+    </div>
+
+    <header class="main-header">
+        <nav class="nav-bar">
+            <a href="index.html" class="logo-infinity">
+                <img src="./assets/images/infinity-logo.png" alt="Infinity School Logo">
+            </a>
+            <button class="hamburger-menu" id="hamburger-menu" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="#courses">Cursos</a></li>
+                <li><a href="#differentials">Diferenciais</a></li>
+                <li><a href="#students">Alunos</a></li>
+                <li><a href="#contact">Contato</a></li>
+                <li><a href="#" id="login-link">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="hero-section">
+            <div class="video-container">
+                <video autoplay loop muted playsinline poster="./assets/images/hero.jpg">
+                    <source src="./assets/videos/hero.mp4" type="video/mp4">
+                    Seu navegador não suporta a tag de vídeo.
+                </video>
+            </div>
+            <div class="hero-content">
+                <h1>Prepare-se para a revolução criativa.</h1>
+                <p>Aqui na Infinity, você não apenas aprende. Você se transforma.</p>
+                <a href="#" class="cta-button open-contact-modal">CONHEÇA NOSSOS CURSOS</a>
+            </div>
+        </section>
+
+        <section id="courses" class="courses-section">
+            <h2>Nossos Cursos</h2>
+            <div class="course-grid">
+                <a href="fullstack.html" target="_blank" class="course-card" data-course="fullstack">
+                    <h3>Programação Full Stack</h3>
+                    <p class="course-description"></p>
+                </a>
+                <a href="marketing.html" target="_blank" class="course-card" data-course="marketing">
+                    <h3>Marketing Digital</h3>
+                    <p class="course-description"></p>
+                </a>
+                <a href="design.html" target="_blank" class="course-card" data-course="design">
+                    <h3>Design Gráfico/Digital</h3>
+                    <p class="course-description"></p>
+                </a>
+                <a href="photography.html" target="_blank" class="course-card" data-course="photography">
+                    <h3>Fotografia</h3>
+                    <p class="course-description"></p>
+                </a>
+                <!-- LINHA CORRIGIDA ABAIXO -->
+                <a href="fdesign.html" target="_blank" class="course-card" data-course="filmdesign">
+                    <h3>Film Design</h3>
+                    <p class="course-description"></p>
+                </a>
+            </div>
+        </section>
+
+        <section id="news" class="news-section">
+            <h2>Notícias e Eventos</h2>
+            <div id="news-container" class="news-grid">
+                <!-- O JavaScript preenche esta área -->
+            </div>
+        </section>
+
+        <section id="differentials" class="differentials-section">
+            <h2>Diferenciais</h2>
+            <div class="differentials-grid">
+                <div class="differential-card">
+                    <img src="./assets/images/adobe" alt="Ícone Adobe" class="differential-icon">
+                    <h3>Autorizado Adobe</h3>
+                    <p>Somos uma escola autorizada pela Adobe a oferecer cursos.</p>
+                </div>
+                <div class="differential-card">
+                    <img src="https://via.placeholder.com/80/cccccc/000000?text=Icon" alt="Ícone Aulas de Reforço" class="differential-icon">
+                    <h3>Aulas de Reforço</h3>
+                    <p>Sempre que o aluno apresentar dificuldade, obtém aulas de reforço.</p>
+                </div>
+                <div class="differential-card">
+                    <img src="https://via.placeholder.com/80/cccccc/000000?text=Icon" alt="Ícone Microsoft" class="differential-icon">
+                    <h3>Microsoft</h3>
+                    <p>Somos parceiros da Microsoft.</p>
+                </div>
+                <div class="differential-card">
+                    <img src="https://via.placeholder.com/80/cccccc/000000?text=Icon" alt="Ícone Aulas Compartilhadas" class="differential-icon">
+                    <h3>Aulas Compartilhadas</h3>
+                    <p>O aluno tem acesso às aulas presenciais de todos os cursos gratuitamente.</p>
+                </div>
+                <div class="differential-card">
+                    <img src="https://via.placeholder.com/80/cccccc/000000?text=Icon" alt="Ícone Google" class="differential-icon">
+                    <h3>Google</h3>
+                    <p>Somos parceiros da Google.</p>
+                </div>
+                <div class="differential-card">
+                    <img src="https://via.placeholder.com/80/cccccc/000000?text=Icon" alt="Ícone Super Módulos" class="differential-icon">
+                    <h3>Super Módulos</h3>
+                    <p>Adicione módulos avançados no seu curso.</p>
+                </div>
+                <div class="differential-card">
+                    <img src="https://via.placeholder.com/80/cccccc/000000?text=Icon" alt="Ícone Reserva do Estúdio" class="differential-icon">
+                    <h3>Reserva do estúdio</h3>
+                    <p>Aluno Infinity pode reservar o estúdio para produzir seus trabalhos.</p>
+                </div>
+                <div class="differential-card">
+                    <img src="https://via.placeholder.com/80/cccccc/000000?text=Icon" alt="Ícone Gamificação" class="differential-icon">
+                    <h3>Gamificação</h3>
+                    <p>Alunos conquistarão pontos e prêmios.</p>
+                </div>
+                <div class="differential-card">
+                    <img src="https://via.placeholder.com/80/cccccc/000000?text=Icon" alt="Ícone 1 Pessoa por Computador" class="differential-icon">
+                    <h3>1 pessoa por computador</h3>
+                    <p>Turmas com computadores individuais de última geração.</p>
+                </div>
+                <div class="differential-card">
+                    <img src="https://via.placeholder.com/80/cccccc/000000?text=Icon" alt="Ícone Cursos Moduláveis" class="differential-icon">
+                    <h3>Cursos moduláveis</h3>
+                    <p>Escolha as matérias que gosta para não aprender o que não é do seu interesse.</p>
+                </div>
+                <div class="differential-card">
+                    <img src="https://via.placeholder.com/80/cccccc/000000?text=Icon" alt="Ícone Certificado Internacional" class="differential-icon">
+                    <h3>Certificado Internacional</h3>
+                    <p>Seu certificado é validado pelas maiores empresas e entregue em inglês.</p>
+                </div>
+                <div class="differential-card">
+                    <img src="https://via.placeholder.com/80/cccccc/000000?text=Icon" alt="Ícone Aula de Reposição" class="differential-icon">
+                    <h3>Aula de reposição presencial</h3>
+                    <p>Caso falte sua aula, repomos gratuitamente de forma presencial.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="students" class="students-section">
+            <h2>O que é ser aluno Infinity</h2>
+            <p class="inspiration-text">Ser aluno Infinity é abraçar a prática, a comunidade e a inovação. É ser um agente de transformação.</p>
+            <div class="testimonials-carousel">
+                <div class="testimonial-card">
+                    <img src="./assets/images/aluno1.jpg" alt="Depoimento do aluno João S., Designer">
+                    <blockquote>"A Infinity me deu as ferramentas para transformar minhas ideias em realidade. É uma verdadeira comunidade de criadores."</blockquote>
+                    <span>- João S., Designer</span>
+                </div>
+                <div class="testimonial-card">
+                    <img src="./assets/images/aluno2.jpg" alt="Depoimento da aluna Maria C., Desenvolvedora">
+                    <blockquote>"Nunca imaginei que aprender a programar seria tão divertido. Os projetos reais nos desafiam a ir além."</blockquote>
+                    <span>- Maria C., Desenvolvedora</span>
+                </div>
+            </div>
+            <div class="infinity-you-module">
+                <h3>Você é Infinity se...</h3>
+                <div class="infinity-items">
+                    <div class="item" data-icon="rocket">Ama Criar</div>
+                    <div class="item" data-icon="book">Aprende Fazendo</div>
+                    <div class="item" data-icon="world">Quer Transformar o Mundo</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2 class="contact-question">Quer fazer parte da revolução criativa?</h2>
+            <button class="cta-button contact-btn">FALE COM A INFINITY</button>
+            <button class="cta-button" id="hours-btn">HORÁRIO DE FUNCIONAMENTO</button>
+            <div class="contact-info">
+                <p>E-mail: contato@infinityschool.com.br</p>
+                <p>Telefone: (11) 98765-4321</p>
+            </div>
+        </section>
+    </main>
+
+<!-- Rodapé Padrão -->
+    <footer>
+        <div class="footer-professional-grid">
+            <div class="footer-about-pro">
+                <h4>Sobre a Infinity School</h4>
+                <p>Revolucionamos a forma de aprender, inspirada no modelo americano de ensino. Nosso propósito é transformar alunos em profissionais prontos para os desafios do mercado, capacitando-os em tecnologia, criatividade e inovação.</p>
+            </div>
+            <div class="footer-units-pro">
+                <h4>Nossas Unidades</h4>
+                <p>Salvador • São Paulo • Fortaleza • Belo Horizonte • Recife</p>
+                <p><strong>Telefone:</strong> 0800 180 0001</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.2,5.2 0 0,1 16.2,21.4H7.8C4.6,21.4 2,18.8 2,16.2V7.8A5.2,5.2 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" /></svg></a>
+                <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.08C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.73,18.78 17.92,18.84C17.13,18.91 16.44,18.94 15.84,18.94L15,19C12.81,19 11.2,18.84 10.17,18.56C9.27,18.31 8.69,17.73 8.44,16.83C8.31,16.36 8.22,15.73 8.16,14.92C8.09,14.13 8.06,13.44 8.06,12.84L8,12C8,9.81 8.16,8.2 8.44,7.17C8.69,6.27 9.27,5.69 10.17,5.44C11.2,5.16 12.81,5 15,5L15.84,5.06C16.44,5.06 17.13,5.09 17.92,5.16C18.73,5.22 19.36,5.31 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" /></svg></a>
+                <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H17L16.5,14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z" /></svg></a>
+                <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.43 13,11.11V10.28H10.13V18.5H13V13.57C13,12.8 13.09,12.03 14.35,12.03C15.54,12.03 15.65,12.92 15.65,13.71V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,6 7.78,5.2 6.88,5.2C6,5.2 5.2,6 5.2,6.88A1.68,1.68 0 0,0 6.88,8.56M8.27,18.5V10.28H5.5V18.5H8.27Z" /></svg></a>
+            </div>
+            <p class="copyright">&copy; 2025 Infinity School. Todos os direitos reservados.</p>
+        </div>
+        <p id="theme-footer-text"></p>
+    </footer>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Área do Aluno</h2>
+            <form id="login-form">
+                <input type="text" placeholder="Usuário" required>
+                <input type="password" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+                <a href="#" class="form-link">Recuperar Senha</a>
+                <a href="#" class="form-link">Alterar Senha</a>
+            </form>
+            <a href="#" id="register-link" class="form-link">Cadastre-se</a>
+            <div class="social-login">
+                <p>ou entre com:</p>
+                <button class="google-btn">Google</button>
+                <button class="facebook-btn">Facebook</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="hours-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Horários de Funcionamento</h2>
+            <div class="hours-content">
+                <div class="hours-category">
+                    <h3>Aulas</h3>
+                    <p><strong>Segunda – Sexta:</strong> 09:00 – 22:00</p>
+                    <p><strong>Sábado:</strong> 07:30 – 21:00</p>
+                    <p><strong>Domingo:</strong> 09:00 – 12:00</p>
+                </div>
+                <div class="hours-category">
+                    <h3>Vendas</h3>
+                    <p><strong>Segunda – Sexta:</strong> 08:00 – 19:00</p>
+                    <p><strong>Sábado:</strong> 08:00 – 14:00</p>
+                </div>
+                <div class="hours-category">
+                    <h3>Coordenação</h3>
+                    <p><strong>Segunda – Sexta:</strong> 09:00 – 18:00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- NOVO MODAL DE CONTATO -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Fale com a Infinity</h2>
+            <p>Preencha o formulário abaixo e um de nossos consultores entrará em contato em breve.</p>
+            <form id="contact-form">
+                <input type="text" placeholder="Seu nome completo" required>
+                <input type="email" placeholder="Seu melhor e-mail" required>
+                <input type="tel" placeholder="Seu telefone (com DDD)">
+                <textarea placeholder="Deixe sua mensagem (opcional)"></textarea>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
