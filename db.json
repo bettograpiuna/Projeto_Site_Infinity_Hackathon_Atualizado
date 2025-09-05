@@ -1,25 +1,59 @@
 {
-  "noticias": [
+  "avisos": [
     {
-      "id": 1,
-      "imagem": "./assets/images/evento1.jpg",
-      "titulo": "Matrículas Abertas para 2026!",
-      "data": "15 de Agosto, 2025",
-      "resumo": "Garanta sua vaga para o próximo ano letivo e junte-se à revolução criativa. Condições especiais para os 50 primeiros matriculados."
+      "titulo": "Manutenção Programada do Estúdio",
+      "data": "15/09/2025",
+      "mensagem": "Informamos que o estúdio de fotografia estará em manutenção durante todo o dia. Agradecemos a compreensão."
     },
     {
-      "id": 2,
-      "imagem": "./assets/images/evento2.jpg",
-      "titulo": "Workshop de Fotografia com Câmera de Cinema",
-      "data": "28 de Setembro, 2025",
-      "resumo": "Um evento prático e imersivo para alunos do curso de Film Design e Fotografia. Vagas limitadas, inscreva-se na coordenação."
+      "titulo": "Inscrições Abertas para Workshop de IA",
+      "data": "10/09/2025",
+      "mensagem": "Não perca! As inscrições para o workshop 'Criatividade com Inteligência Artificial' já estão abertas na área do aluno."
     },
     {
-      "id": 3,
-      "imagem": "./assets/images/evento3.jpg",
-      "titulo": "Infinity Hackathon: Crie um App em 48h",
-      "data": "10 de Outubro, 2025",
-      "resumo": "Desafie suas habilidades de programação e design no nosso hackathon anual. Prêmios incríveis para as melhores equipes!"
+      "titulo": "Novos Horários de Aulas de Reforço",
+      "data": "08/09/2025",
+      "mensagem": "Confira os novos horários para as aulas de reforço de Lógica de Programação, disponíveis a partir da próxima semana."
+    }
+  ],
+  "professores": [
+    {
+      "nome": "Carla Siqueira",
+      "especialidade": "Design Gráfico e UI/UX"
+    },
+    {
+      "nome": "Marcos Andrade",
+      "especialidade": "Desenvolvimento Full Stack"
+    },
+    {
+      "nome": "Beatriz Lima",
+      "especialidade": "Marketing Digital e SEO"
+    },
+    {
+      "nome": "Ricardo Mendes",
+      "especialidade": "Fotografia e Film Design"
+    },
+    {
+      "nome": "Sofia Almeida",
+      "especialidade": "Gestão de Projetos Ágeis"
+    }
+  ],
+  "novos_cursos": [
+    {
+      "nome": "Edição de Vídeo Avançada",
+      "status": "Inscrições Abertas"
+    },
+    {
+      "nome": "Inteligência Artificial para Criativos",
+      "status": "Em Breve"
+    },
+    {
+        "nome": "Animação 3D com Blender",
+        "status": "Inscrições Abertas"
+    },
+    {
+        "nome": "Desenvolvimento de Games",
+        "status": "Em Breve"
     }
   ]
 }
