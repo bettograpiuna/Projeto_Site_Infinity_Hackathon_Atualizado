@@ -39,6 +39,10 @@ body {
     line-height: 1.6;
 }
 
+main {
+    padding-top: 6rem;
+}
+
 section {
     padding: 5rem 1.5rem;
     text-align: center;
@@ -1409,6 +1413,12 @@ form button[type="submit"]:hover { background-color: var(--accent-color); }
         overflow-x: visible;
         padding-bottom: 0;
     }
+    .color-mode-toggle {
+        /* Move o botão de tema para a esquerda do menu hambúrguer */
+        right: 4.5rem; /* Ajuste este valor se necessário */
+        top: 1.1rem;   /* Alinha verticalmente com o menu */
+    }
+
     .differentials-grid {
         grid-template-columns: repeat(2, 1fr);
     }
