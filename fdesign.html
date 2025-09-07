@@ -24,10 +24,10 @@
     <link rel="icon" href="./assets/images/logo.jpeg" type="image/jpeg">
     <meta name="theme-color" content="#FF0000">
 
-    <link rel="stylesheet" href="style.css?v=7.4">
+    <link rel="stylesheet" href="style.css?v=12.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto:wght@400;500;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 
@@ -39,20 +39,30 @@
 
     <header class="main-header">
         <nav class="nav-bar">
-            <a href="index.html" class="logo-infinity">
+            <a href="index.html" class="logo-link">
                 <img src="./assets/images/infinity-logo.png" alt="Infinity School Logo">
+                <span class="logo-text">Infinity School</span>
             </a>
             <button class="hamburger-menu" id="hamburger-menu" aria-label="Abrir menu">
-                <span></span><span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
             <ul class="nav-links" id="nav-links">
                 <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="index.html#courses">Cursos</a></li>
+                <li class="dropdown">
+                    <a href="index.html#courses" class="dropdown-toggle">Cursos</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="fullstack.html">Programação Full Stack</a></li>
+                        <li><a href="marketing.html">Marketing Digital</a></li>
+                        <li><a href="design.html">Design Gráfico/Digital</a></li>
+                        <li><a href="photography.html">Fotografia</a></li>
+                        <li><a href="fdesign.html">Film Design</a></li>
+                    </ul>
+                </li>
                 <li><a href="index.html#updates">Novidades</a></li>
-                <li><a href="index.html#differentials">Diferenciais</a></li>
                 <li><a href="index.html#students">Alunos</a></li>
                 <li><a href="#" class="open-contact-modal">Contato</a></li>
-                <li><a href="#" id="login-link">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -67,38 +77,47 @@
                     <span class="word-wrapper">COM</span>
                     <span class="word-wrapper">IA.</span>
                 </h1>
-                <p class="animated-subheadline">Torne-se um criador audiovisual completo. Domine filmagem, VFX e motion graphics em 13 meses.</p>
+                <p class="animated-subheadline">Torne-se um criador audiovisual completo. 
+                <br>Domine filmagem, VFX e motion graphics em 13 meses.</p>
             </div>
         </section>
 
         <section class="experience-section" aria-labelledby="advantages-title">
             <h2 id="advantages-title" class="section-title">Por que este curso é diferente?</h2>
             <div class="experience-grid">
-                <div class="experience-card">
-                    <div class="icon">🎬</div>
-                    <h3>Domine Premiere & After Effects + IA</h3>
-                    <p>As ferramentas padrão da indústria, potencializadas por inteligência artificial.</p>
+                <div class="experience-card" data-card="f1">
+                    <div class="card-content-overlay">
+                        <div class="icon">🎬</div> 
+                        <h3>Domine Premiere & After Effects + IA</h3>
+                        <p>As ferramentas padrão da indústria, potencializadas por inteligência artificial.</p>
+                    </div>
                 </div>
-                <div class="experience-card">
-                    <div class="icon">🏆</div>
-                    <h3>Certificação Oficial Adobe</h3>
-                    <p>Um selo de qualidade que te diferencia instantaneamente no mercado.</p>
+                <div class="experience-card" data-card="f2">
+                    <div class="card-content-overlay">
+                        <div class="icon">🏆</div>
+                        <h3>Certificação Oficial Adobe</h3>
+                        <p>Um selo de qualidade que te diferencia instantaneamente no mercado.</p>
+                    </div>
                 </div>
-                <div class="experience-card">
-                    <div class="icon">💡</div>
-                    <h3>Projetos Reais, Portfólio Real</h3>
-                    <p>Seu portfólio de produtor começa no primeiro dia, não no final do curso.</p>
+                <div class="experience-card" data-card="f3">
+                    <div class="card-content-overlay">
+                        <div class="icon">💡</div>
+                        <h3>Projetos Reais, Portfólio Real</h3>
+                        <p>Seu portfólio de produtor começa no primeiro dia, não no final do curso.</p>
+                    </div>
                 </div>
-                <div class="experience-card">
-                    <div class="icon">🎥</div>
-                    <h3>Estúdio Profissional à Disposição</h3>
-                    <p>Equipamentos de ponta para você criar suas produções sem limites.</p>
+                <div class="experience-card" data-card="f4">
+                    <div class="card-content-overlay">
+                        <div class="icon">🎥</div>
+                        <h3>Estúdio Profissional à Disposição</h3>
+                        <p>Equipamentos de ponta para você criar suas produções sem limites.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="about-content-section bg-darker" aria-labelledby="course-content-title">
-            <div class="about-grid">
+            <div class="about-grid" id="film-design-grid">
                 <div class="about-text-content">
                     <h2 id="course-content-title">Do Roteiro à <span class="highlight">Tela</span></h2>
                     <p>Aprenda a criar como os melhores do mercado, dominando todas as etapas da produção audiovisual:</p>
@@ -126,12 +145,12 @@
                     </dl>
                 </div>
                 <div class="about-image-content">
-                    <img src="./assets/images/inf.jpg" alt="Equipe de filmagem em um set profissional da Infinity School">
+                    <img id="film-design-image" src="./assets/images/inf.jpg" alt="Equipe de filmagem em um set profissional da Infinity School">
                 </div>
             </div>
         </section>
 
-        <section class="impact-section" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/images/capa.jpg');" aria-label="Frase de Impacto: Seu passaporte para a indústria audiovisual 4.0">
+        <section class="impact-section" style="background-image: url('./assets/images/capa.jpg');" aria-label="Frase de Impacto: Seu passaporte para a indústria audiovisual 4.0">
             <div class="impact-content">
                 <h2>SEU PASSAPORTE PARA A INDÚSTRIA AUDIOVISUAL 4.0</h2>
             </div>

@@ -24,10 +24,10 @@
     <link rel="icon" href="./assets/images/logo.jpeg" type="image/jpeg">
     <meta name="theme-color" content="#FF0000">
 
-    <link rel="stylesheet" href="style.css?v=7.4">
+    <link rel="stylesheet" href="style.css?v=12.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto:wght@400;500;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 
@@ -39,20 +39,30 @@
 
     <header class="main-header">
         <nav class="nav-bar">
-            <a href="index.html" class="logo-infinity">
+            <a href="index.html" class="logo-link">
                 <img src="./assets/images/infinity-logo.png" alt="Infinity School Logo">
+                <span class="logo-text">Infinity School</span>
             </a>
             <button class="hamburger-menu" id="hamburger-menu" aria-label="Abrir menu">
-                <span></span><span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
             <ul class="nav-links" id="nav-links">
                 <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="index.html#courses">Cursos</a></li>
+                <li class="dropdown">
+                    <a href="index.html#courses" class="dropdown-toggle">Cursos</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="fullstack.html">Programação Full Stack</a></li>
+                        <li><a href="marketing.html">Marketing Digital</a></li>
+                        <li><a href="design.html">Design Gráfico/Digital</a></li>
+                        <li><a href="photography.html">Fotografia</a></li>
+                        <li><a href="fdesign.html">Film Design</a></li>
+                    </ul>
+                </li>
                 <li><a href="index.html#updates">Novidades</a></li>
-                <li><a href="index.html#differentials">Diferenciais</a></li>
                 <li><a href="index.html#students">Alunos</a></li>
                 <li><a href="#" class="open-contact-modal">Contato</a></li>
-                <li><a href="#" id="login-link">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -65,75 +75,87 @@
                     <span class="word-wrapper">DEV</span>
                     <span class="word-wrapper">FULL</span>
                     <span class="word-wrapper">STACK</span>
+                    <br>
                     <span class="word-wrapper">COM</span>
                     <span class="word-wrapper">IA.</span>
                 </h1>
-                <p class="animated-subheadline">Em 13 meses, do zero ao profissional. Preparamos você para liderar a revolução tech.</p>
+                <p class="animated-subheadline">Em 13 meses, do zero ao profissional. 
+                <br>Preparamos você para liderar a revolução tech.</p>
             </div>
         </section>
 
         <section class="experience-section" aria-labelledby="advantages-title">
-            <h2 id="advantages-title" class="section-title">Por que ser Full Stack com IA na Infinity?</h2>
+            <h2 id="advantages-title" class="section-title">Por que ser Full Stack
+            <br> com IA na Infinity?</h2>
             <div class="experience-grid">
-                <div class="experience-card">
-                    <div class="icon">💻</div>
-                    <h3>Domine Python & JavaScript + IA</h3>
-                    <p>A combinação mais poderosa e requisitada do mercado global.</p>
+                <div class="experience-card" data-card="full1">
+                    <div class="card-content-overlay">
+                        <div class="icon">💻</div>
+                        <h3>Domine Python & JavaScript + IA</h3>
+                        <p>A combinação mais poderosa e requisitada do mercado global.</p>
+                    </div>
                 </div>
-                <div class="experience-card">
-                    <div class="icon">📂</div>
-                    <h3>Projetos Reais Desde o Dia 1</h3>
-                    <p>Seu portfólio começa agora, não no final do curso. Aprenda fazendo.</p>
+                <div class="experience-card" data-card="full2">
+                    <div class="card-content-overlay">
+                        <div class="icon">📂</div>
+                        <h3>Projetos Reais Desde o Dia 1</h3>
+                        <p>Seu portfólio começa agora, não no final do curso. Aprenda fazendo.</p>
+                    </div>
                 </div>
-                <div class="experience-card">
-                    <div class="icon">🌐</div>
-                    <h3>Parcerias de Peso</h3>
-                    <p>Aprenda com as ferramentas que Adobe, Microsoft e Google usam.</p>
+                <div class="experience-card" data-card="full3">
+                    <div class="card-content-overlay">
+                        <div class="icon">🌐</div>
+                        <h3>Parcerias de Peso</h3>
+                        <p>Aprenda com as ferramentas que Adobe, Microsoft e Google usam.</p>
+                    </div>
                 </div>
-                <div class="experience-card">
-                    <div class="icon">🖥️</div>
-                    <h3>1 Aluno por Máquina</h3>
-                    <p>Computadores de última geração, sem dividir atenção ou recursos.</p>
+                <div class="experience-card" data-card="full4">
+                    <div class="card-content-overlay">
+                        <div class="icon">🖥️</div>
+                        <h3>1 Aluno por Máquina</h3>
+                        <p>Computadores de última geração, sem dividir atenção ou recursos.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="about-content-section bg-darker" aria-labelledby="what-you-will-build-title">
             <div class="about-grid">
-                <div class="about-text-content">
-                    <h2 id="what-you-will-build-title">O Que Você Vai <span class="highlight">Construir?</span></h2>
-                    <dl class="checklist-grid">
-                        <dt>
-                            <span class="checklist-icon">✔</span>
-                            <strong>HTML/CSS Turbinado por IA</strong>
-                        </dt>
-                        <dd>Construa sites e interfaces inteligentes, otimizando seu workflow.</dd>
-                        <dt>
-                            <span class="checklist-icon">✔</span>
-                            <strong>Apps e Games com JavaScript & IA</strong>
-                        </dt>
-                        <dd>Desenvolva aplicações interativas com integração de inteligência artificial.</dd>
-                        <dt>
-                            <span class="checklist-icon">✔</span>
-                            <strong>Sistemas Completos com Python</strong>
-                        </dt>
-                        <dd>Domine o back-end, crie APIs e prepare sistemas para deploy em nuvem.</dd>
-                        <dt>
-                            <span class="checklist-icon">✔</span>
-                            <strong>Projeto Final</strong>
-                        </dt>
-                        <dd>Crie uma solução completa e robusta, seu trampolim para empregos ou carreira freelance.</dd>
-                    </dl>
-                </div>
+                <dl class="checklist-grid">
+    <dt>
+        <span class="checklist-icon">✔</span>
+        <strong>HTML/CSS Turbinado por IA</strong>
+    </dt>
+    <dd>Construa sites e interfaces inteligentes, otimizando seu workflow.</dd>
+    
+    <dt>
+        <span class="checklist-icon">✔</span>
+        <strong>Apps e Games com JavaScript & IA</strong>
+    </dt>
+    <dd>Desenvolva aplicações interativas com integração de inteligência artificial.</dd>
+    
+    <dt>
+        <span class="checklist-icon">✔</span>
+        <strong>Sistemas Completos com Python</strong>
+    </dt>
+    <dd>Domine o back-end, crie APIs e prepare sistemas para deploy em nuvem.</dd>
+    
+    <dt>
+        <span class="checklist-icon">✔</span>
+        <strong>Projeto Final</strong>
+    </dt>
+    <dd>Crie uma solução completa e robusta, seu trampolim para empregos ou carreira freelance.</dd>
+</dl>
                 <div class="about-image-content">
-                    <img src="./assets/images/image5.jpeg" alt="Ilustração de um desenvolvedor trabalhando em múltiplos monitores com código e elementos de IA">
+                    <img src="./assets/images/micro3.jpeg" alt="Ilustração de um desenvolvedor trabalhando em múltiplos monitores com código e elementos de IA">
                 </div>
             </div>
         </section>
         
-        <section class="impact-section" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/images/ok.jpeg');" aria-label="Frase de Impacto: Ou você sai empregável, ou a gente te ajuda até conseguir.">
+        <section class="impact-section" style="background-image: url('./assets/images/ok.jpeg');" aria-label="Frase de Impacto: Ou você sai empregável, ou a gente te ajuda até conseguir.">
             <div class="impact-content">
-                <h2>OU VOCÊ SAI EMPREGÁVEL, OU A GENTE TE AJUDA ATÉ CONSEGUIR.</h2>
+                <h2>VOCÊ EMPREGÁVEL, OU
+                <br>TE AJUDAMOS ATÉ CONSEGUIR.</h2>
             </div>
         </section>
 

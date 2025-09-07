@@ -24,10 +24,10 @@
     <link rel="icon" href="./assets/images/logo.jpeg" type="image/jpeg">
     <meta name="theme-color" content="#FF0000">
 
-    <link rel="stylesheet" href="style.css?v=7.4">
+    <link rel="stylesheet" href="style.css?v=12.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto:wght@400;500;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 
@@ -39,20 +39,30 @@
 
     <header class="main-header">
         <nav class="nav-bar">
-            <a href="index.html" class="logo-infinity">
+            <a href="index.html" class="logo-link">
                 <img src="./assets/images/infinity-logo.png" alt="Infinity School Logo">
+                <span class="logo-text">Infinity School</span>
             </a>
             <button class="hamburger-menu" id="hamburger-menu" aria-label="Abrir menu">
-                <span></span><span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
             <ul class="nav-links" id="nav-links">
                 <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="index.html#courses">Cursos</a></li>
+                <li class="dropdown">
+                    <a href="index.html#courses" class="dropdown-toggle">Cursos</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="fullstack.html">Programação Full Stack</a></li>
+                        <li><a href="marketing.html">Marketing Digital</a></li>
+                        <li><a href="design.html">Design Gráfico/Digital</a></li>
+                        <li><a href="photography.html">Fotografia</a></li>
+                        <li><a href="fdesign.html">Film Design</a></li>
+                    </ul>
+                </li>
                 <li><a href="index.html#updates">Novidades</a></li>
-                <li><a href="index.html#differentials">Diferenciais</a></li>
                 <li><a href="index.html#students">Alunos</a></li>
                 <li><a href="#" class="open-contact-modal">Contato</a></li>
-                <li><a href="#" id="login-link">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -65,32 +75,41 @@
                     <span class="word-wrapper">FOTOGRAFIA</span>
                     <span class="word-wrapper">DESIGN.</span>
                 </h1>
-                <p class="animated-subheadline">Domine a arte, a técnica e o business da fotografia em 9 meses de prática intensiva.</p>
+                <p class="animated-subheadline">Domine a arte, a técnica e o business da fotografia.
+                <br>9 meses de prática intensiva.</p>
             </div>
         </section>
         
         <section class="experience-section" aria-labelledby="tools-title">
             <h2 id="tools-title" class="section-title">Seu Olhar, Nossas Ferramentas</h2>
             <div class="experience-grid">
-                <div class="experience-card">
-                    <div class="icon">👗</div>
-                    <h3>Ensaios de Moda & Publicidade</h3>
-                    <p>Crie imagens que contam histórias e vendem produtos para grandes marcas.</p>
+                <div class="experience-card" data-card="foto1">
+                    <div class="card-content-overlay">
+                        <div class="icon">👗</div>
+                        <h3>Ensaios de Moda & Publicidade</h3>
+                        <p>Crie imagens que contam histórias e vendem produtos para grandes marcas.</p>
+                    </div>
                 </div>
-                <div class="experience-card">
-                    <div class="icon">📦</div>
-                    <h3>Fotografia de Produtos</h3>
-                    <p>Aprenda a iluminar, compor e clicar produtos que se destacam em e-commerces.</p>
+                <div class="experience-card" data-card="foto2">
+                    <div class="card-content-overlay">
+                        <div class="icon">📦</div>
+                        <h3>Fotografia de Produtos</h3>
+                        <p>Aprenda a iluminar, compor e clicar produtos que se destacam em e-commerces.</p>
+                    </div>
                 </div>
-                <div class="experience-card">
-                    <div class="icon">✨</div>
-                    <h3>Tratamento de Imagem Avançado</h3>
-                    <p>Domine Photoshop e Lightroom para criar edições de nível internacional.</p>
+                <div class="experience-card" data-card="foto3">
+                    <div class="card-content-overlay">
+                        <div class="icon">✨</div>
+                        <h3>Tratamento de Imagem Avançado</h3>
+                        <p>Domine Photoshop e Lightroom para criar edições de nível internacional.</p>
+                    </div>
                 </div>
-                <div class="experience-card">
-                    <div class="icon">🏙️</div>
-                    <h3>Fotos Arquitetônicas & Paisagens</h3>
-                    <p>Capture a beleza de espaços e da natureza com técnica e sensibilidade.</p>
+                <div class="experience-card" data-card="foto4">
+                    <div class="card-content-overlay">
+                        <div class="icon">🏙️</div>
+                        <h3>Fotos Arquitetônicas & Paisagens</h3>
+                        <p>Capture a beleza de espaços e da natureza com técnica e sensibilidade.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -107,7 +126,7 @@
             </div>
         </section>
 
-        <section class="impact-section" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/images/ollhar.jpg');" aria-label="Frase de Impacto: Seu olhar vai virar arte e negócio.">
+        <section class="impact-section" style="background-image: url('./assets/images/ollhar.jpg');" aria-label="Frase de Impacto: Seu olhar vai virar arte e negócio.">
             <div class="impact-content">
                 <h2>SEU OLHAR VAI VIRAR ARTE E NEGÓCIO.</h2>
             </div>

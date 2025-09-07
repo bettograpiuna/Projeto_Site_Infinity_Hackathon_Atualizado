@@ -1,7 +1,7 @@
 /**
  * @file Script principal para interatividade do site da Infinity School.
  * @description Gerencia o menu de navegação, modais, tema, animações e carregamento de conteúdo dinâmico.
- * @version 8.0
+ * @version 10.0
  */
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -37,10 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /**
      * Carrega e renderiza os dados do mural de novidades (avisos, professores, novos cursos) do arquivo db.json.
-     * Utiliza tags semânticas (<li>) para melhor SEO e acessibilidade.
      */
     async function loadUpdatesData() {
-        // Garante que a função só execute se os containers existirem na página.
         if (!avisosContainer || !professoresContainer || !novosCursosContainer) return;
 
         try {
@@ -50,12 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const data = await response.json();
 
-            // Limpa containers antes de adicionar novos elementos
             avisosContainer.innerHTML = '';
             professoresContainer.innerHTML = '';
             novosCursosContainer.innerHTML = '';
 
-            // Popula os avisos
             data.avisos.forEach(aviso => {
                 const listItem = document.createElement('li');
                 listItem.className = 'aviso-card';
@@ -69,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 avisosContainer.appendChild(listItem);
             });
 
-            // Popula os professores
             data.professores.forEach(prof => {
                 const listItem = document.createElement('li');
                 listItem.className = 'professor-item';
@@ -80,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 professoresContainer.appendChild(listItem);
             });
 
-            // Popula os novos cursos
             data.novos_cursos.forEach(curso => {
                 const listItem = document.createElement('li');
                 listItem.className = 'curso-item';
@@ -127,26 +121,41 @@ document.addEventListener('DOMContentLoaded', () => {
      * Controla a reprodução e a transição do vídeo na seção Hero.
      */
     function handleHeroVideo() {
-        const heroVideo = document.getElementById('hero-video');
-        if (!heroVideo) return;
-        
-        heroVideo.addEventListener('canplaythrough', () => {
-            heroVideo.play().catch(e => console.error("Erro ao reproduzir o vídeo:", e));
-            
-            setTimeout(() => {
-                heroVideo.classList.add('video-fade-out');
-                setTimeout(() => {
-                    heroVideo.pause();
-                    heroVideo.style.display = 'none';
-                }, 1000);
-            }, 6000); // 6 segundos de vídeo antes da transição
-        });
+    const heroVideo = document.getElementById('hero-video');
+    if (!heroVideo) return;
 
-        heroVideo.addEventListener('error', () => {
-            console.warn("Não foi possível carregar o vídeo. Exibindo imagem de fundo estática.");
-            heroVideo.style.display = 'none'; 
-        });
-    }
+    // --- Criamos uma função reutilizável para mostrar o fundo ---
+    const showStaticBackground = () => {
+        const videoContainer = document.querySelector('.video-container');
+        if (videoContainer) {
+            videoContainer.classList.add('show-background');
+        }
+    };
+
+    // --- CENÁRIO DE SUCESSO: O vídeo pode ser reproduzido ---
+    heroVideo.addEventListener('canplaythrough', () => {
+        heroVideo.style.opacity = '1';
+        
+        heroVideo.play().catch(e => console.error("Erro ao reproduzir o vídeo:", e));
+        
+        // Após 6 segundos, o vídeo some e a imagem de fundo aparece
+        setTimeout(() => {
+            heroVideo.classList.add('video-fade-out');
+            setTimeout(() => {
+                heroVideo.pause();
+                heroVideo.style.display = 'none';
+                showStaticBackground(); // A imagem de fundo é chamada aqui
+            }, 1000);
+        }, 6000); 
+    });
+
+    // --- CENÁRIO DE FALHA: O vídeo dá erro ---
+    heroVideo.addEventListener('error', () => {
+        console.warn("Não foi possível carregar o vídeo. Exibindo imagem de fundo estática.");
+        heroVideo.style.display = 'none'; 
+        showStaticBackground(); // A imagem de fundo também é chamada aqui imediatamente
+    });
+}
 
     /**
      * Alterna a classe do tema no body e atualiza os recursos visuais relacionados.
@@ -178,7 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
             updateThemeAssets();
         });
         
-        // Aplica o tema salvo ao carregar a página
         if (localStorage.getItem('theme') === 'blue') {
             body.classList.add('theme-blue');
         }

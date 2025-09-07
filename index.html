@@ -24,10 +24,10 @@
     <link rel="icon" href="./assets/images/logo.jpeg" type="image/jpeg">
     <meta name="theme-color" content="#FF0000">
 
-    <link rel="stylesheet" href="style.css?v=7.2"> 
+    <link rel="stylesheet" href="style.css?v=11.0"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto:wght@400;500;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 
@@ -39,8 +39,9 @@
 
     <header class="main-header">
         <nav class="nav-bar">
-            <a href="index.html" class="logo-infinity">
+            <a href="index.html" class="logo-link">
                 <img src="./assets/images/infinity-logo.png" alt="Infinity School Logo">
+                <span class="logo-text">Infinity School</span>
             </a>
             <button class="hamburger-menu" id="hamburger-menu" aria-label="Abrir menu">
                 <span></span>
@@ -49,31 +50,36 @@
             </button>
             <ul class="nav-links" id="nav-links">
                 <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="#courses">Cursos</a></li>
+                <li class="dropdown">
+                    <a href="#courses" class="dropdown-toggle">Cursos</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="fullstack.html">Programação Full Stack</a></li>
+                        <li><a href="marketing.html">Marketing Digital</a></li>
+                        <li><a href="design.html">Design Gráfico/Digital</a></li>
+                        <li><a href="photography.html">Fotografia</a></li>
+                        <li><a href="fdesign.html">Film Design</a></li>
+                    </ul>
+                </li>
                 <li><a href="#updates">Novidades</a></li>
-                <li><a href="#differentials">Diferenciais</a></li>
                 <li><a href="#students">Alunos</a></li>
                 <li><a href="#" class="open-contact-modal">Contato</a></li>
-                <li><a href="#" id="login-link">Login</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-
         <section class="hero-section" aria-labelledby="hero-title">
             <div class="video-container">
-                <video id="hero-video" autoplay muted playsinline loop poster="./assets/images/hero.jpeg">
+                <video id="hero-video" autoplay muted playsinline loop style="opacity: 0;">
                     <source src="./assets/videos/hero.mp4" type="video/mp4">
                     Seu navegador não suporta a tag de vídeo.
                 </video>
             </div>
             <div class="hero-content">
                 <h1 id="hero-title" class="animated-headline">
-                    <span class="word-wrapper">Prepare-se</span>
-                    <span class="word-wrapper">para a</span>
-                    <span class="word-wrapper">revolução</span>
-                    <span class="word-wrapper">criativa.</span>
+                    <span class="word-wrapper">Prepare-se para a</span>
+                    <br>
+                    <span class="word-wrapper">revolução_criativa</span>
                 </h1>
                 <p class="animated-subheadline">
                     Aqui na Infinity, você não apenas aprende. Você se transforma.
@@ -90,6 +96,37 @@
                 <a href="design.html" target="_blank" class="course-card" data-course="design"><h3>Design Gráfico/Digital</h3><p class="course-description"></p></a>
                 <a href="photography.html" target="_blank" class="course-card" data-course="photography"><h3>Fotografia</h3><p class="course-description"></p></a>
                 <a href="fdesign.html" target="_blank" class="course-card" data-course="filmdesign"><h3>Film Design</h3><p class="course-description"></p></a>
+            </div>
+        </section>
+
+        <section id="you-are-infinity" class="infinity-you-section">
+            <div class="infinity-you-module">
+                <h3>Você é Infinity se...</h3>
+                <div class="infinity-items">
+                    <div class="item">Ama Criar</div>
+                    <div class="item">Aprende Fazendo</div>
+                    <div class="item">É Mão na Massa</div>
+                    <div class="item">Pensa Fora da Caixa</div>
+                    <div class="item">Quer Transformar o Mundo</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="differentials" class="differentials-section" aria-labelledby="differentials-title">
+            <h2 id="differentials-title" class="section-title">Diferenciais</h2>
+            <div class="differentials-grid">
+                <div class="differential-card"><div class="card-content"><h3>Autorizado Adobe</h3><p>Somos uma escola autorizada pela Adobe a oferecer cursos.</p></div></div>
+                <div class="differential-card"><div class="card-content"><h3>Aulas de Reforço</h3><p>Sempre que o aluno apresentar dificuldade, obtém aulas de reforço.</p></div></div>
+                <div class="differential-card"><div class="card-content"><h3>Microsoft</h3><p>Somos parceiros da Microsoft.</p></div></div>
+                <div class="differential-card"><div class="card-content"><h3>Aulas Compartilhadas</h3><p>O aluno tem acesso às aulas presenciais de todos os cursos gratuitamente.</p></div></div>
+                <div class="differential-card"><div class="card-content"><h3>Google</h3><p>Somos parceiros da Google.</p></div></div>
+                <div class="differential-card"><div class="card-content"><h3>Super Módulos</h3><p>Adicione módulos avançados no seu curso.</p></div></div>
+                <div class="differential-card"><div class="card-content"><h3>Reserva do estúdio</h3><p>Aluno Infinity pode reservar o estúdio para produzir seus trabalhos.</p></div></div>
+                <div class="differential-card"><div class="card-content"><h3>Gamificação</h3><p>Alunos conquistarão pontos e prêmios.</p></div></div>
+                <div class="differential-card"><div class="card-content"><h3>1 pessoa por computador</h3><p>Turmas com computadores individuais de última geração.</p></div></div>
+                <div class="differential-card"><div class="card-content"><h3>Cursos moduláveis</h3><p>Escolha as matérias que gosta para não aprender o que não é do seu interesse.</p></div></div>
+                <div class="differential-card"><div class="card-content"><h3>Certificado Internacional</h3><p>Seu certificado é validado pelas maiores empresas e entregue em inglês.</p></div></div>
+                <div class="differential-card"><div class="card-content"><h3>Aula de reposição presencial</div><p>Caso falte sua aula, repomos gratuitamente de forma presencial.</p></div></div>
             </div>
         </section>
 
@@ -113,7 +150,7 @@
                 <div class="updates-column">
                     <h3>Corpo Docente</h3>
                     <div id="professores-container" class="updates-content" role="list">
-                         <noscript>
+                        <noscript>
                             <div class="professor-item" role="listitem">
                                 <strong>Carla Siqueira</strong>
                                 <span>Design Gráfico e UI/UX</span>
@@ -124,7 +161,7 @@
                 <div class="updates-column">
                     <h3>Novos Cursos</h3>
                     <div id="novos-cursos-container" class="updates-content" role="list">
-                         <noscript>
+                        <noscript>
                             <div class="curso-item" role="listitem">
                                 <strong>Edição de Vídeo Avançada</strong>
                                 <span class="status-aberto">Inscrições Abertas</span>
@@ -132,24 +169,6 @@
                         </noscript>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="differentials" class="differentials-section" aria-labelledby="differentials-title">
-            <h2 id="differentials-title" class="section-title">Diferenciais</h2>
-            <div class="differentials-grid">
-                <div class="differential-card"><div class="card-content"><h3>Autorizado Adobe</h3><p>Somos uma escola autorizada pela Adobe a oferecer cursos.</p></div></div>
-                <div class="differential-card"><div class="card-content"><h3>Aulas de Reforço</h3><p>Sempre que o aluno apresentar dificuldade, obtém aulas de reforço.</p></div></div>
-                <div class="differential-card"><div class="card-content"><h3>Microsoft</h3><p>Somos parceiros da Microsoft.</p></div></div>
-                <div class="differential-card"><div class="card-content"><h3>Aulas Compartilhadas</h3><p>O aluno tem acesso às aulas presenciais de todos os cursos gratuitamente.</p></div></div>
-                <div class="differential-card"><div class="card-content"><h3>Google</h3><p>Somos parceiros da Google.</p></div></div>
-                <div class="differential-card"><div class="card-content"><h3>Super Módulos</h3><p>Adicione módulos avançados no seu curso.</p></div></div>
-                <div class="differential-card"><div class="card-content"><h3>Reserva do estúdio</h3><p>Aluno Infinity pode reservar o estúdio para produzir seus trabalhos.</p></div></div>
-                <div class="differential-card"><div class="card-content"><h3>Gamificação</h3><p>Alunos conquistarão pontos e prêmios.</p></div></div>
-                <div class="differential-card"><div class="card-content"><h3>1 pessoa por computador</h3><p>Turmas com computadores individuais de última geração.</p></div></div>
-                <div class="differential-card"><div class="card-content"><h3>Cursos moduláveis</h3><p>Escolha as matérias que gosta para não aprender o que não é do seu interesse.</p></div></div>
-                <div class="differential-card"><div class="card-content"><h3>Certificado Internacional</h3><p>Seu certificado é validado pelas maiores empresas e entregue em inglês.</p></div></div>
-                <div class="differential-card"><div class="card-content"><h3>Aula de reposição presencial</div><p>Caso falte sua aula, repomos gratuitamente de forma presencial.</p></div></div>
             </div>
         </section>
 
@@ -161,18 +180,8 @@
                 <div class="testimonial-card"><img src="./assets/images/aluno2.jpg" alt="Depoimento da aluna Maria C., Desenvolvedora"><blockquote>"Nunca imaginei que aprender a programar seria tão divertido. Os projetos reais nos desafiam a ir além."</blockquote><span>- Maria C., Desenvolvedora</span></div>
                 <div class="testimonial-card"><img src="./assets/images/aluno3.jpg" alt="Depoimento da aluna Sofia A., Marketeira"><blockquote>"A metodologia prática é o diferencial. Em poucos meses, já estou aplicando o que aprendi em projetos reais."</blockquote><span>- Sofia A., Marketeira</span></div>
             </div>
-            <div class="infinity-you-module">
-                <h3>Você é Infinity se...</h3>
-                <div class="infinity-items">
-                    <div class="item">Ama Criar</div>
-                    <div class="item">Aprende Fazendo</div>
-                    <div class="item">É Mão na Massa</div>
-                    <div class="item">Pensa Fora da Caixa</div>
-                    <div class="item">Quer Transformar o Mundo</div>
-                </div>
-            </div>
         </section>
-
+        
         <section id="contact" class="contact-section" aria-labelledby="contact-title">
             <h2 id="contact-title" class="contact-question">Quer fazer parte da revolução criativa?</h2>
             <button class="cta-button open-contact-modal">FALE COM A INFINITY</button>

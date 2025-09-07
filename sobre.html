@@ -24,7 +24,7 @@
     <link rel="icon" href="./assets/images/logo.jpeg" type="image/jpeg">
     <meta name="theme-color" content="#FF0000">
 
-    <link rel="stylesheet" href="style.css?v=7.4">
+    <link rel="stylesheet" href="style.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
@@ -38,37 +38,45 @@
     </div>
 
     <header class="main-header">
-        <nav class="nav-bar">
-            <a href="index.html" class="logo-infinity">
-                <img src="./assets/images/infinity-logo.png" alt="Infinity School Logo">
-            </a>
-            <button class="hamburger-menu" id="hamburger-menu" aria-label="Abrir menu">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="index.html#courses">Cursos</a></li>
-                <li><a href="index.html#updates">Novidades</a></li>
-                <li><a href="index.html#differentials">Diferenciais</a></li>
-                <li><a href="index.html#students">Alunos</a></li>
-                <li><a href="#" class="open-contact-modal">Contato</a></li>
-                <li><a href="#" id="login-link">Login</a></li>
-            </ul>
-        </nav>
+    <nav class="nav-bar">
+        <a href="index.html" class="logo-link">
+            <img src="./assets/images/infinity-logo.png" alt="Infinity School Logo">
+            <span class="logo-text">Infinity School</span>
+        </a>
+        <button class="hamburger-menu" id="hamburger-menu" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="sobre.html">Sobre</a></li>
+            <li class="dropdown">
+                <a href="index.html#courses" class="dropdown-toggle">Cursos</a>
+                <ul class="dropdown-menu">
+                    <li><a href="fullstack.html">Programação Full Stack</a></li>
+                    <li><a href="marketing.html">Marketing Digital</a></li>
+                    <li><a href="design.html">Design Gráfico/Digital</a></li>
+                    <li><a href="photography.html">Fotografia</a></li>
+                    <li><a href="fdesign.html">Film Design</a></li>
+                </ul>
+            </li>
+            <li><a href="index.html#updates">Novidades</a></li>
+            <li><a href="index.html#students">Alunos</a></li>
+            <li><a href="#" class="open-contact-modal">Contato</a></li>
+        </ul>
+    </nav>
     </header>
 
     <main>
 
-        <section class="about-hero" aria-labelledby="hero-title">
+        <section class="about-hero hero-sobre" aria-labelledby="hero-title">
             <div class="hero-content">
                 <h1 id="hero-title" class="animated-headline">
-                    <span class="word-wrapper">A Revolução</span>
-                    <span class="word-wrapper">na</span>
-                    <span class="word-wrapper">Educação</span>
-                    <span class="word-wrapper">que o</span>
+                    <span class="word-wrapper">A Revolução que o</span>
+                    <br>
                     <span class="word-wrapper">Mercado Esperava.</span>
                 </h1>
-                <p class="animated-subheadline">Sua jornada começa aqui.</p>
+                <p class="animated-subheadline">Sua jornada criativa e tecnológica começa aqui.</p>
             </div>
         </section>
 
@@ -103,32 +111,41 @@
         <section class="experience-section" aria-labelledby="experience-title">
             <h2 id="experience-title" class="section-title">Por Dentro da Infinity Experience</h2>
             <div class="experience-grid">
-                <div class="experience-card">
-                    <div class="icon">🔥</div>
-                    <h3>Projetos Reais (PBL)</h3>
-                    <p>Viva a realidade da sua área desde o Dia 1 e comece seu portfólio agora.</p>
+                <div class="experience-card" data-card="sobre1">
+                    <div class="card-content-overlay">
+                        <div class="icon">🔥</div>
+                        <h3>Projetos Reais (PBL)</h3>
+                        <p>Viva a realidade da sua área desde o Dia 1 e comece seu portfólio agora.</p>
+                    </div>
                 </div>
-                <div class="experience-card">
-                    <div class="icon">💡</div>
-                    <h3>O Anti-Método</h3>
-                    <p>100% desafios, mentorias e sprints práticos. "Fail Fast, Learn Faster".</p>
+                <div class="experience-card" data-card="sobre2">
+                    <div class="card-content-overlay">
+                        <div class="icon">💡</div>
+                        <h3>O Anti-Método</h3>
+                        <p>100% desafios, mentorias e sprints práticos. "Fail Fast, Learn Faster".</p>
+                    </div>
                 </div>
-                <div class="experience-card">
-                    <div class="icon">🚀</div>
-                    <h3>Carreiras do Futuro</h3>
-                    <p>Formamos profissionais com DNA Infinity: criativos, ágeis e prontos para pivotar.</p>
+                <div class="experience-card" data-card="sobre3">
+                    <div class="card-content-overlay">
+                        <div class="icon">🚀</div>
+                        <h3>Carreiras do Futuro</h3>
+                        <p>Formamos profissionais com DNA Infinity: criativos, ágeis e prontos para pivotar.</p>
+                    </div>
                 </div>
-                <div class="experience-card">
-                    <div class="icon">🌎</div>
-                    <h3>Networking Real</h3>
-                    <p>Acesse nossa comunidade de mentores, empresas e líderes do mercado.</p>
+                <div class="experience-card" data-card="sobre4">
+                    <div class="card-content-overlay">
+                        <div class="icon">🌎</div>
+                        <h3>Networking Real</h3>
+                        <p>Acesse nossa comunidade de mentores, empresas e líderes do mercado.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="impact-section" aria-label="Frase de Impacto: O tempo da educação decorativa acabou.">
             <div class="impact-content">
-                <h2>O TEMPO DA EDUCAÇÃO DECORATIVA ACABOU.</h2>
+                <h2>O TEMPO DA EDUCAÇÃO 
+                <br>DECORATIVA ACABOU.</h2>
             </div>
         </section>
         

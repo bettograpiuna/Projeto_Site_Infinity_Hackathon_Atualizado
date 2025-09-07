@@ -24,10 +24,10 @@
     <link rel="icon" href="./assets/images/logo.jpeg" type="image/jpeg">
     <meta name="theme-color" content="#FF0000">
 
-    <link rel="stylesheet" href="style.css?v=7.4">
+    <link rel="stylesheet" href="style.css?v=12.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto:wght@400;500;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 
@@ -39,20 +39,30 @@
 
     <header class="main-header">
         <nav class="nav-bar">
-            <a href="index.html" class="logo-infinity">
+            <a href="index.html" class="logo-link">
                 <img src="./assets/images/infinity-logo.png" alt="Infinity School Logo">
+                <span class="logo-text">Infinity School</span>
             </a>
             <button class="hamburger-menu" id="hamburger-menu" aria-label="Abrir menu">
-                <span></span><span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
             <ul class="nav-links" id="nav-links">
                 <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="index.html#courses">Cursos</a></li>
+                <li class="dropdown">
+                    <a href="index.html#courses" class="dropdown-toggle">Cursos</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="fullstack.html">Programação Full Stack</a></li>
+                        <li><a href="marketing.html">Marketing Digital</a></li>
+                        <li><a href="design.html">Design Gráfico/Digital</a></li>
+                        <li><a href="photography.html">Fotografia</a></li>
+                        <li><a href="fdesign.html">Film Design</a></li>
+                    </ul>
+                </li>
                 <li><a href="index.html#updates">Novidades</a></li>
-                <li><a href="index.html#differentials">Diferenciais</a></li>
                 <li><a href="index.html#students">Alunos</a></li>
                 <li><a href="#" class="open-contact-modal">Contato</a></li>
-                <li><a href="#" id="login-link">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -74,25 +84,33 @@
         <section class="experience-section" aria-labelledby="what-you-will-master-title">
             <h2 id="what-you-will-master-title" class="section-title">O Que Você Vai Dominar?</h2>
             <div class="experience-grid">
-                <div class="experience-card">
-                    <div class="icon">🖥️</div>
-                    <h3>Criação de Anúncios com IA</h3>
-                    <p>Gere peças de alta conversão para Meta, Google e TikTok Ads em segundos.</p>
+                <div class="experience-card" data-card="mar1">
+                    <div class="card-content-overlay">
+                        <div class="icon">🖥️</div>
+                        <h3>Criação de Anúncios com IA</h3>
+                        <p>Gere peças de alta conversão para Meta, Google e TikTok Ads em segundos.</p>
+                    </div>
                 </div>
-                <div class="experience-card">
-                    <div class="icon">📊</div>
-                    <h3>Gestão de Tráfego Pago</h3>
-                    <p>Domine as principais plataformas de anúncios e otimize orçamentos como um profissional.</p>
+                <div class="experience-card" data-card="mar2">
+                    <div class="card-content-overlay">
+                        <div class="icon">📊</div>
+                        <h3>Gestão de Tráfego Pago</h3>
+                        <p>Domine as principais plataformas de anúncios e otimize orçamentos como um profissional.</p>
+                    </div>
                 </div>
-                <div class="experience-card">
-                    <div class="icon">🔍</div>
-                    <h3>SEO & Analytics</h3>
-                    <p>Posicione sites no Google e tome decisões estratégicas baseadas em dados.</p>
+                <div class="experience-card" data-card="mar3">
+                    <div class="card-content-overlay">
+                        <div class="icon">🔍</div>
+                        <h3>SEO & Analytics</h3>
+                        <p>Posicione sites no Google e tome decisões estratégicas baseadas em dados.</p>
+                    </div>
                 </div>
-                <div class="experience-card">
-                    <div class="icon">🤖</div>
-                    <h3>Automação com IA</h3>
-                    <p>Crie chatbots, otimize campanhas e automatize tarefas repetitivas.</p>
+                <div class="experience-card" data-card="mar4">
+                    <div class="card-content-overlay">
+                        <div class="icon">🤖</div>
+                        <h3>Automação com IA</h3>
+                        <p>Crie chatbots, otimize campanhas e automatize tarefas repetitivas.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -114,7 +132,7 @@
             </div>
         </section>
         
-        <section class="impact-section" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./assets/images/bi.png');" aria-label="Frase de Impacto: O mercado movimenta R$ 15 bilhões por ano. A falta de profissionais é enorme.">
+        <section class="impact-section" style="background-image: url('./assets/images/bi.png');" aria-label="Frase de Impacto: O mercado movimenta R$ 15 bilhões por ano. A falta de profissionais é enorme.">
             <div class="impact-content">
                 <h2>O MERCADO MOVIMENTA R$ 15 BILHÕES POR ANO. A FALTA DE PROFISSIONAIS É ENORME.</h2>
             </div>
