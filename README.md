@@ -1,3 +1,13 @@
+Ver Site Online
+
+Este projeto está disponível e pode ser acessado diretamente através do GitHub Pages.
+
+<p align="center">
+<a href="https://bettograpiuna.github.io/Projeto_Site_Infinity_Hackathon_Atualizado/">
+<b>Clique para ver o projeto em ação</b>
+</a>
+</p>
+
 Projeto Infinity School - Site Institucional
 
 O Infinity School é um site institucional moderno, dinâmico e responsivo, desenvolvido com o objetivo de apresentar os cursos, diferenciais e a filosofia de uma escola de tecnologia e criatividade.
@@ -25,16 +35,6 @@ Tecnologias Utilizadas
     JavaScript: Lógica de interatividade, manipulação do DOM e uso de APIs modernas (Fetch, Intersection Observer).
 
     JSON: "Banco de dados" simples para gerenciar o conteúdo dinâmico.
-
-Ver Site Online
-
-Este projeto está disponível e pode ser acessado diretamente através do GitHub Pages.
-
-<p align="center">
-<a href="https://bettograpiuna.github.io/Projeto_Site_Infinity_Hackathon_Atualizado/">
-<b>Clique para ver o projeto em ação</b>
-</a>
-</p>
 
 Jornada de Aprendizado
 
