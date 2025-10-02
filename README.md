@@ -33,7 +33,7 @@ Tecnologias Utilizadas
     CSS3: Estilização, layouts responsivos (com Flexbox e Grid) e animações.
 
     JavaScript: Lógica de interatividade, manipulação do DOM e uso de APIs modernas (Fetch, Intersection Observer).
-
+    
     JSON: "Banco de dados" simples para gerenciar o conteúdo dinâmico.
 
 Jornada de Aprendizado
