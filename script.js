@@ -1,26 +1,27 @@
 /**
- * @file Script principal para interatividade do site da Infinity School.
- * @description Gerencia o menu de navegação, modais, tema, animações e carregamento de conteúdo dinâmico.
- * @version 10.0
+ * @file Script principal de interatividade do site da Infinity School.
+ * @description Gerencia tema, navegação, modais, animações e conteúdo dinâmico.
+ * @version 9.0
  */
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Seletores de Elementos Globais ---
+    // --- Seletores globais ---
     const { body } = document;
     const allModals = document.querySelectorAll('.modal');
     const sections = document.querySelectorAll('section');
 
-    // --- Lógica do Tema ---
+    // --- Tema ---
     const themeToggle = document.getElementById('theme-toggle');
     const themeFooterText = document.getElementById('theme-footer-text');
     const originalTitle = document.title;
-    const bahiaThemeTitle = "A Infinity também é o mundo!!!";
+    const bahiaThemeTitle = 'A Infinity também é o mundo!!!';
 
-    // --- Lógica de Navegação e Menu ---
+    // --- Navegação ---
+    const header = document.querySelector('.main-header');
     const hamburger = document.getElementById('hamburger-menu');
     const navLinks = document.getElementById('nav-links');
 
-    // --- Lógica dos Modais ---
+    // --- Modais ---
     const loginModal = document.getElementById('login-modal');
     const hoursModal = document.getElementById('hours-modal');
     const contactModal = document.getElementById('contact-modal');
@@ -29,72 +30,78 @@ document.addEventListener('DOMContentLoaded', () => {
     const hoursBtn = document.getElementById('hours-btn');
     const contactBtns = document.querySelectorAll('.open-contact-modal');
     const contactForm = document.getElementById('contact-form');
-    
-    // --- Lógica do Mural de Novidades ---
+
+    // --- Mural de novidades ---
     const avisosContainer = document.getElementById('avisos-container');
     const professoresContainer = document.getElementById('professores-container');
     const novosCursosContainer = document.getElementById('novos-cursos-container');
 
     /**
-     * Carrega e renderiza os dados do mural de novidades (avisos, professores, novos cursos) do arquivo db.json.
+     * Carrega e renderiza o mural de novidades a partir do arquivo db.json.
+     * Usa <li> dentro das listas <ul> para melhor semântica e acessibilidade.
      */
     async function loadUpdatesData() {
+        // Só executa se os três containers existirem (apenas na página inicial).
         if (!avisosContainer || !professoresContainer || !novosCursosContainer) return;
 
         try {
             const response = await fetch('db.json');
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
+            if (!response.ok) throw new Error(`Erro HTTP! status: ${response.status}`);
             const data = await response.json();
 
+            // Limpa os containers antes de preencher.
             avisosContainer.innerHTML = '';
             professoresContainer.innerHTML = '';
             novosCursosContainer.innerHTML = '';
 
+            // Avisos
             data.avisos.forEach(aviso => {
-                const listItem = document.createElement('li');
-                listItem.className = 'aviso-card';
-                listItem.innerHTML = `
+                const li = document.createElement('li');
+                li.className = 'aviso-card';
+                li.innerHTML = `
                     <div class="aviso-card-header">
                         <h4>${aviso.titulo}</h4>
                         <span>${aviso.data}</span>
                     </div>
                     <p>${aviso.mensagem}</p>
                 `;
-                avisosContainer.appendChild(listItem);
+                avisosContainer.appendChild(li);
             });
 
+            // Professores
             data.professores.forEach(prof => {
-                const listItem = document.createElement('li');
-                listItem.className = 'professor-item';
-                listItem.innerHTML = `
+                const li = document.createElement('li');
+                li.className = 'professor-item';
+                li.innerHTML = `
                     <strong>${prof.nome}</strong>
                     <span>${prof.especialidade}</span>
                 `;
-                professoresContainer.appendChild(listItem);
+                professoresContainer.appendChild(li);
             });
 
+            // Novos cursos
             data.novos_cursos.forEach(curso => {
-                const listItem = document.createElement('li');
-                listItem.className = 'curso-item';
-                const statusClass = curso.status === "Inscrições Abertas" ? 'status-aberto' : 'status-breve';
-                listItem.innerHTML = `
+                const li = document.createElement('li');
+                li.className = 'curso-item';
+                const statusClass = curso.status === 'Inscrições Abertas' ? 'status-aberto' : 'status-breve';
+                li.innerHTML = `
                     <strong>${curso.nome}</strong>
                     <span class="${statusClass}">${curso.status}</span>
                 `;
-                novosCursosContainer.appendChild(listItem);
+                novosCursosContainer.appendChild(li);
             });
 
         } catch (error) {
-            console.error("Não foi possível carregar os dados de novidades:", error);
+            console.error('Não foi possível carregar as novidades:', error);
             const updatesSection = document.getElementById('updates');
-            if(updatesSection) updatesSection.innerHTML = '<p style="text-align: center; color: #ff8a8a;">Não foi possível carregar as novidades no momento. Tente novamente mais tarde.</p>';
+            if (updatesSection) {
+                updatesSection.innerHTML = '<p style="text-align:center;color:#ff8a8a;">Não foi possível carregar as novidades no momento. Tente novamente mais tarde.</p>';
+            }
         }
     }
 
     /**
-     * Anima os elementos da seção Hero (título, parágrafo, botão) com um efeito de entrada.
+     * Anima a entrada dos elementos do Hero (palavras do título, parágrafo e botão).
      */
     function animateHeroElements() {
         const heroTitle = document.querySelector('.hero-content h1');
@@ -103,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const heroParagraph = document.querySelector('.hero-content p');
         const heroButton = document.querySelector('.hero-content .cta-button-hero');
         const wordSpans = heroTitle.querySelectorAll('.word-wrapper');
-        
         if (wordSpans.length === 0) return;
 
         const titleAnimationDuration = 300 * wordSpans.length;
@@ -116,58 +122,45 @@ document.addEventListener('DOMContentLoaded', () => {
             if (heroButton) heroButton.classList.add('is-visible');
         }, titleAnimationDuration);
     }
-    
+
     /**
-     * Controla a reprodução e a transição do vídeo na seção Hero.
+     * Controla a reprodução e a transição (fade-out) do vídeo do Hero.
      */
     function handleHeroVideo() {
-    const heroVideo = document.getElementById('hero-video');
-    if (!heroVideo) return;
+        const heroVideo = document.getElementById('hero-video');
+        if (!heroVideo) return;
 
-    // --- Criamos uma função reutilizável para mostrar o fundo ---
-    const showStaticBackground = () => {
-        const videoContainer = document.querySelector('.video-container');
-        if (videoContainer) {
-            videoContainer.classList.add('show-background');
-        }
-    };
+        heroVideo.addEventListener('canplaythrough', () => {
+            heroVideo.play().catch(e => console.error('Erro ao reproduzir o vídeo:', e));
 
-    // --- CENÁRIO DE SUCESSO: O vídeo pode ser reproduzido ---
-    heroVideo.addEventListener('canplaythrough', () => {
-        heroVideo.style.opacity = '1';
-        
-        heroVideo.play().catch(e => console.error("Erro ao reproduzir o vídeo:", e));
-        
-        // Após 6 segundos, o vídeo some e a imagem de fundo aparece
-        setTimeout(() => {
-            heroVideo.classList.add('video-fade-out');
             setTimeout(() => {
-                heroVideo.pause();
-                heroVideo.style.display = 'none';
-                showStaticBackground(); // A imagem de fundo é chamada aqui
-            }, 1000);
-        }, 6000); 
-    });
+                heroVideo.classList.add('video-fade-out');
+                setTimeout(() => {
+                    heroVideo.pause();
+                    heroVideo.style.display = 'none';
+                }, 1000);
+            }, 6000); // 6 segundos de vídeo antes da transição
+        });
 
-    // --- CENÁRIO DE FALHA: O vídeo dá erro ---
-    heroVideo.addEventListener('error', () => {
-        console.warn("Não foi possível carregar o vídeo. Exibindo imagem de fundo estática.");
-        heroVideo.style.display = 'none'; 
-        showStaticBackground(); // A imagem de fundo também é chamada aqui imediatamente
-    });
-}
+        heroVideo.addEventListener('error', () => {
+            console.warn('Não foi possível carregar o vídeo. Exibindo imagem estática.');
+            heroVideo.style.display = 'none';
+        });
+    }
 
     /**
-     * Alterna a classe do tema no body e atualiza os recursos visuais relacionados.
+     * Alterna o tema (vermelho/azul) e atualiza título e mensagem do rodapé.
      */
-    function toggleTheme() {
+    function setupTheme() {
         if (!themeToggle) return;
 
         const setFooterMessage = () => {
-            if (themeFooterText) {
-                const blue = '#0055A4', red = '#EC1C24', white = '#FFFFFF';
-                themeFooterText.innerHTML = `<span style="color: ${blue};">A</span><span style="color: ${white};"> Infinity</span><span style="color: ${red};"> também</span><span style="color: ${blue};"> é</span><span style="color: ${white};"> o</span><span style="color: ${red};"> mundo!!!</span>`;
-            }
+            if (!themeFooterText) return;
+            const blue = '#0055A4', red = '#EC1C24', white = '#FFFFFF';
+            themeFooterText.innerHTML =
+                `<span style="color:${blue};">A</span><span style="color:${white};"> Infinity</span>` +
+                `<span style="color:${red};"> também</span><span style="color:${blue};"> é</span>` +
+                `<span style="color:${white};"> o</span><span style="color:${red};"> mundo!!!</span>`;
         };
         const clearFooterMessage = () => { if (themeFooterText) themeFooterText.innerHTML = ''; };
 
@@ -180,57 +173,73 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearFooterMessage();
             }
         };
-        
+
         themeToggle.addEventListener('click', () => {
             body.classList.toggle('theme-blue');
             localStorage.setItem('theme', body.classList.contains('theme-blue') ? 'blue' : 'default');
             updateThemeAssets();
         });
-        
-        if (localStorage.getItem('theme') === 'blue') {
-            body.classList.add('theme-blue');
-        }
+
+        // Aplica o tema salvo ao carregar a página.
+        if (localStorage.getItem('theme') === 'blue') body.classList.add('theme-blue');
         updateThemeAssets();
     }
-    
+
     /**
-     * Configura os event listeners para o menu hambúrguer (mobile).
+     * Menu hambúrguer (mobile): abre/fecha e anima o ícone para "X".
      */
     function setupHamburgerMenu() {
         if (!hamburger || !navLinks) return;
-        
+
+        const toggleMenu = (open) => {
+            navLinks.classList.toggle('active', open);
+            hamburger.classList.toggle('is-open', open);
+            hamburger.setAttribute('aria-expanded', String(open));
+        };
+
         hamburger.addEventListener('click', (e) => {
             e.stopPropagation();
-            navLinks.classList.toggle('active');
+            toggleMenu(!navLinks.classList.contains('active'));
         });
-        
+
+        // Fecha ao clicar em um link do menu.
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => toggleMenu(false));
+        });
+
+        // Fecha ao clicar fora do menu.
         document.addEventListener('click', (e) => {
             if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !hamburger.contains(e.target)) {
-                navLinks.classList.remove('active');
+                toggleMenu(false);
             }
         });
     }
 
     /**
-     * Gerencia a abertura e fechamento de todos os modais da página.
+     * Gerencia abertura e fechamento de todos os modais.
      */
     function setupModals() {
-        const openModal = (modal) => { if (modal) modal.style.display = 'flex'; };
-        const closeModal = (modal) => { if (modal) modal.style.display = 'none'; };
+        const openModal = (modal) => { if (modal) modal.classList.add('is-open'); };
+        const closeModal = (modal) => { if (modal) modal.classList.remove('is-open'); };
 
         if (loginLink) loginLink.addEventListener('click', (e) => { e.preventDefault(); openModal(loginModal); });
         if (hoursBtn) hoursBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(hoursModal); });
-        
+
         contactBtns.forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); openModal(contactModal); }));
         closeButtons.forEach(btn => btn.addEventListener('click', () => closeModal(btn.closest('.modal'))));
-        
+
+        // Clique no fundo escuro fecha o modal.
         allModals.forEach(modal => modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(modal); }));
+
+        // Tecla ESC fecha qualquer modal aberto.
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') allModals.forEach(closeModal);
+        });
 
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                const formData = new FormData(contactForm);
-                const name = formData.get('name');
+                const name = new FormData(contactForm).get('name');
                 alert(`Obrigado pelo seu contato, ${name}! Recebemos sua mensagem e retornaremos em breve.`);
                 closeModal(contactModal);
                 contactForm.reset();
@@ -239,12 +248,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /**
-     * Utiliza IntersectionObserver para animar seções quando elas entram na viewport.
+     * Revela as seções com uma animação quando entram na tela (IntersectionObserver).
      */
     function setupScrollAnimations() {
         if (sections.length === 0) return;
 
-        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -252,22 +260,42 @@ document.addEventListener('DOMContentLoaded', () => {
                     observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
-        
+        }, { threshold: 0.1 });
+
         sections.forEach(section => observer.observe(section));
     }
 
     /**
-     * Função principal de inicialização que chama todas as outras funções.
+     * Adiciona uma classe ao header quando a página é rolada (fundo mais opaco).
+     */
+    function setupHeaderScroll() {
+        if (!header) return;
+        const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+    }
+
+    /**
+     * Preenche o ano atual no rodapé automaticamente.
+     */
+    function setupCurrentYear() {
+        const yearSpan = document.getElementById('current-year');
+        if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+    }
+
+    /**
+     * Inicialização: chama todas as funções acima.
      */
     function init() {
         loadUpdatesData();
         animateHeroElements();
         handleHeroVideo();
-        toggleTheme();
+        setupTheme();
         setupHamburgerMenu();
         setupModals();
         setupScrollAnimations();
+        setupHeaderScroll();
+        setupCurrentYear();
     }
 
     init();

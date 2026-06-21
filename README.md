@@ -1,41 +1,58 @@
-Ver Site Online
+# Infinity School — Site Institucional
 
-Este projeto está disponível e pode ser acessado diretamente através do GitHub Pages.
+Site institucional moderno, responsivo e acessível, que apresenta os cursos,
+diferenciais e a filosofia de uma escola de tecnologia e economia criativa.
+Inspirado no site oficial [infinityschool.com.br](https://infinityschool.com.br/).
 
-<p align="center">
-<a href="https://bettograpiuna.github.io/Projeto_Site_Infinity_Hackathon_Atualizado/">
-<b>Clique para ver o projeto em ação</b>
-</a>
-</p>
+Projeto **estático** (HTML + CSS + JavaScript puro), sem necessidade de build
+ou instalação de pacotes — pode ser publicado diretamente no GitHub Pages.
 
-Projeto Infinity School - Site Institucional
+## ✨ Funcionalidades
 
-O Infinity School é um site institucional moderno, dinâmico e responsivo, desenvolvido com o objetivo de apresentar os cursos, diferenciais e a filosofia de uma escola de tecnologia e criatividade.
+- **Design responsivo** — adapta-se a desktop, tablet e celular.
+- **Tema dual (vermelho/azul)** — alternador que salva a preferência no navegador.
+- **Conteúdo dinâmico** — mural de novidades carregado de um arquivo JSON (`db.json`).
+- **Componentes interativos** — modais de login, contato e horários, e menu mobile.
+- **Animações** — revelação de seções no scroll e efeitos de entrada no hero.
+- **Acessibilidade** — link "pular para o conteúdo", foco visível pelo teclado,
+  rótulos `aria`, botões semânticos e respeito a `prefers-reduced-motion`.
 
-O projeto foi construído durante uma jornada de aprendizado autodidata, focando na solidez dos conceitos e na aplicação de tecnologias front-end fundamentais. A Inteligência Artificial (IA) foi utilizada como uma ferramenta de apoio para acelerar o desenvolvimento e superar desafios técnicos, transformando a ideia inicial em uma solução funcional e visualmente agradável.
+## 🗂️ Estrutura do projeto
 
-Funcionalidades Principais
+| Arquivo | Função |
+| --- | --- |
+| `index.html` | Página inicial (hero, cursos, números, novidades, diferenciais, alunos, contato) |
+| `sobre.html` | Página "Sobre Nós" |
+| `fullstack.html`, `marketing.html`, `design.html`, `photography.html`, `fdesign.html` | Páginas dos 5 cursos |
+| `style.css` | Folha de estilo única, com sistema de design baseado em variáveis (tokens) |
+| `script.js` | Interatividade: tema, menu, modais, animações e carregamento do mural |
+| `db.json` | "Banco de dados" simples com avisos, professores e novos cursos |
+| `assets/` | Imagens e vídeo |
 
-    Design Responsivo: O site se adapta a diferentes tamanhos de tela (desktops, tablets e dispositivos móveis).
+## 🛠️ Tecnologias
 
-    Conteúdo Dinâmico: Seção de notícias carregada a partir de um arquivo JSON.
+- **HTML5** — estrutura semântica e acessível.
+- **CSS3** — variáveis (tokens), Flexbox, Grid, `clamp()`, animações e `prefers-reduced-motion`.
+- **JavaScript** — DOM, `fetch`, `IntersectionObserver` e `localStorage`.
+- **Fontes** — Sora (títulos) e Inter (texto), via Google Fonts.
 
-    Tema Dual (Dark Mode): Alternador de tema que permite ao usuário escolher entre duas paletas de cores.
+## ▶️ Como rodar localmente
 
-    Componentes Interativos: Modais de login e contato, além de um menu mobile funcional.
+Por usar `fetch` para ler o `db.json`, abra o projeto com um servidor local
+(abrir o arquivo direto pelo `file://` bloqueia o carregamento do mural):
 
-    Animações: Efeitos de scroll e cards interativos com efeito 3D (tilt.js) para uma experiência de usuário mais engajante.
+```bash
+# opção 1 — Python
+python -m http.server 8000
 
-Tecnologias Utilizadas
+# opção 2 — Node (npx)
+npx serve
+```
 
-    HTML5: Estruturação semântica do conteúdo.
+Depois acesse `http://localhost:8000` no navegador.
 
-    CSS3: Estilização, layouts responsivos (com Flexbox e Grid) e animações.
+## 📌 Histórico
 
-    JavaScript: Lógica de interatividade, manipulação do DOM e uso de APIs modernas (Fetch, Intersection Observer).
-    
-    JSON: "Banco de dados" simples para gerenciar o conteúdo dinâmico.
-
-Jornada de Aprendizado
-
-Este projeto foi uma experiência de aprendizado intensa, consolidando conceitos de HTML, CSS e JavaScript. A abordagem de desconstrução do código se mostrou eficaz para o entendimento profundo das funcionalidades, e a utilização da IA foi fundamental para superar obstáculos e acelerar o processo de desenvolvimento. O projeto demonstra que, com dedicação e as ferramentas certas, é possível construir soluções complexas mesmo em fase inicial de estudos.
+Projeto desenvolvido como exercício de aprendizado e posteriormente
+**modernizado (v8.0)**: redesign visual completo, remoção de código duplicado,
+correção de links e melhorias de acessibilidade, performance e SEO.
